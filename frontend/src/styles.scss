@@ -3,7 +3,7 @@ body {
     background-color: #f3f3f3;
   }
 .form-group {
-  height: 80px;
+  height: 60px;
   margin-bottom: 15px!important;
 }
   .btn-primary {
@@ -31,4 +31,8 @@ body {
 }
 .fa-times-circle, .fa-check-circle{
   font-size: 14px!important;
+}
+
+.form-control {
+  height: 30px!important; /* Adjust the height as needed */
 }

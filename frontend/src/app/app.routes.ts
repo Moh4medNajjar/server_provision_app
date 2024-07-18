@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ServerDetailsComponent } from './server-details/server-details.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ServersComponent } from './servers/servers.component';
+import { SignUpAdminComponent } from './sign-up-admin/sign-up-admin.component';
 
 export const routes: Routes = [
   { path: 'index', component: IndexPageComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'server-details', component: ServerDetailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'admin-signup', component: SignUpAdminComponent },
 
 ];
