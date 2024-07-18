@@ -1,50 +1,55 @@
-<div class="container-fluid" style="height: 100%;">
-  <h1 class="text-center mt-5">VM Provisioner</h1>
-  <h5 class="text-center mt-5">- Sign up as demander -</h5>
+<div class="container-fluid" style="height: 100vh;">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <h5 class="text-center mt-3">- Sign up as demander -</h5>
 
   <div class="d-flex align-items-center justify-content-center" style="flex-direction: column">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" style="width: min(400px, 100%);">
+
       <div class="form-group">
         <label for="username">Username</label>
         <input id="username" formControlName="username" class="form-control" type="text">
         @if(signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid && !signUpForm.get('username')?.pristine){
-          <div class="red" role="alert">Username is required!</div>
+          <div class="red">
+            <i class="fa fa-times-circle"></i> Username is required!
+          </div>
         }
         @if(signUpForm.get('username')?.touched && signUpForm.get('username')?.valid){
-          <div class="green" role="alert">Looks good!</div>
-        }
-      </div>
-
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input id="firstName" formControlName="firstName" class="form-control" type="text">
-        @if(signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.invalid){
-          <div class="red">
-            First name is required.
-          </div>
-        }
-        @if(signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.valid){
           <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
+            <i class="fa fa-check-circle"></i> Looks good!
           </div>
         }
       </div>
 
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input id="lastName" formControlName="lastName" class="form-control" type="text">
-        @if(signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.invalid){
-          <div class="red">
-            First name is required.
-          </div>
-        }
-        @if(signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.valid){
-          <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
-          </div>
-        }
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="form-group me-3">
+          <label for="firstName">First Name</label>
+          <input id="firstName" formControlName="firstName" class="form-control" type="text">
+          @if(signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.invalid){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> First name is required.
+            </div>
+          }
+          @if(signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" formControlName="lastName" class="form-control" type="text">
+          @if(signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.invalid){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> Last name is required.
+            </div>
+          }
+          @if(signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
       </div>
 
 
@@ -53,91 +58,100 @@
         <input id="email" formControlName="email" class="form-control" type="email">
         @if(signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid){
           <div class="red">
-            Email is missing or not valid.
+            <i class="fa fa-times-circle"></i> Email is missing or not valid.
           </div>
         }
         @if(signUpForm.get('email')?.touched && signUpForm.get('email')?.valid){
           <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
+            <i class="fa fa-check-circle"></i> Looks good!
           </div>
         }
       </div>
 
-      <div class="form-group">
-        <label for="employeeId">Employee ID</label>
-        <input id="employeeId" formControlName="employeeId" class="form-control" type="text">
-        @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.invalid){
-          <div class="red">
-            Employee id is required.
-          </div>
-        }
-        @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.valid){
-          <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
-          </div>
-        }
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="form-group me-3">
+          <label for="employeeId">Employee ID</label>
+          <input id="employeeId" formControlName="employeeId" class="form-control" type="text">
+          @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.invalid){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> Employee id is required.
+            </div>
+          }
+          @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position</label>
+          <input id="position" formControlName="position" class="form-control" type="text">
+          @if(signUpForm.get('position')?.touched && signUpForm.get('position')?.invalid){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> Position is required.
+            </div>
+          }
+          @if(signUpForm.get('position')?.touched && signUpForm.get('position')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="position">Position</label>
-        <input id="position" formControlName="position" class="form-control" type="text">
-        @if(signUpForm.get('position')?.touched && signUpForm.get('position')?.invalid){
-          <div class="red">
-            Employee id is required.
-          </div>
-        }
-        @if(signUpForm.get('position')?.touched && signUpForm.get('position')?.valid){
-          <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
-          </div>
-        }
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="form-group me-3">
+          <label for="password">Password</label>
+          <input id="password" formControlName="password" class="form-control" type="password">
+          @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid){
+            @if(signUpForm.get('password')?.errors?.['required']){
+              <div class="red">
+                <i class="fa fa-times-circle"></i> Password is required.
+              </div>
+            }
+            @if(signUpForm.get('password')?.errors?.['minlength'] && signUpForm.get('password')?.errors?.['pattern']){
+              <div class="red">
+                <i class="fa fa-times-circle"></i> Password must be at least 8 characters and contain one uppercase letter, one lowercase letter, and one number.
+              </div>
+            }
+            @if(signUpForm.get('password')?.errors?.['pattern']){
+              <div class="red">
+                <i class="fa fa-times-circle"></i> Use a strong password.
+              </div>
+            }
+          }
+          @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password">
+
+          @if(signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid){
+            @if(signUpForm.get('confirmPassword')?.errors?.['required']){
+              <div class="red">
+                <i class="fa fa-times-circle"></i> Confirm Password is required.
+              </div>
+            }
+            @if(signUpForm.hasError('mismatch') && signUpForm.get('confirmPassword')?.dirty){
+              <div class="red">
+                <i class="fa fa-times-circle"></i> Password mismatch!
+              </div>
+            }
+          }
+
+          @if(signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input id="password" formControlName="password" class="form-control" type="password">
-        @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid){
-          @if(signUpForm.get('password')?.errors?.['required']){
-            <div class="red">Password is required.</div>
-          }
-          @if(signUpForm.get('password')?.errors?.['minlength']){
-            <div class="red">Password must be at least 8 characters.</div>
-          }
-          @if(signUpForm.get('password')?.errors?.['pattern']){
-            <div class="red">Password must contain at least one uppercase letter, one lowercase letter, and one number.</div>
-          }
-        }
-        @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.valid){
-          <div class="green">
-            <i class="fa fa-check"></i>
-            Looks good!
-          </div>
-        }
-      </div>
-
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password">
-
-        @if(signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid){
-          @if(signUpForm.get('confirmPassword')?.errors?.['required']){
-            <div class="red">Confirm Password is required.</div>
-          }
-          @if(signUpForm.hasError('mismatch') && signUpForm.get('confirmPassword')?.dirty){
-            <div class="red">Password mismatch!</div>
-          }
-        }
-
-        @if(signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.valid){
-          <div class="green">
-            <i class="fa fa-check"></i> Looks good!
-          </div>
-        }
-      </div>
-
 
       <div class="d-flex align-items-center justify-content-center mt-4">
         <button class="btn"

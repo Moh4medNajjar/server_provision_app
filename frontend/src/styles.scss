@@ -2,7 +2,10 @@
 body {
     background-color: #f3f3f3;
   }
-
+.form-group {
+  height: 80px;
+  margin-bottom: 15px!important;
+}
   .btn-primary {
     background-color: #0078d4;
     border-color: #0078d4;
@@ -17,6 +20,7 @@ body {
   background-color: #131314!important;
   height: 100vh;
   color: white;
+  padding-bottom:40px!important
 }
 
 .green {
@@ -24,4 +28,7 @@ body {
 }
 .red {
   color: #F70101
+}
+.fa-times-circle, .fa-check-circle{
+  font-size: 14px!important;
 }
