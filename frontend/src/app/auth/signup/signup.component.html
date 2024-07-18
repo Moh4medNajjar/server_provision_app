@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h1 class="text-center mt-5">VM Provisioner</h1>
+  <h5 class="text-center mt-5">- Sign up as demander -</h5>
+  <div class="d-flex align-items-center justify-content-center" style="flex-direction: column">
+    <form  (ngSubmit)="onSubmit()" style="width: min(400px, 100%);">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email" formControlName="email" class="form-control" type="email">
+      </div>
+      <div class="form-group">
+        <label for="matricule">Matricule</label>
+        <input id="matricule" formControlName="matricule" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" class="form-control" type="password">
+      </div>
+      <div class="d-flex align-items-center justify-content-center mt-4">
+        <button class="btn" style="background-color:#32BEDD; color:white; padding: 4px 15px; border-radius: 0px;" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

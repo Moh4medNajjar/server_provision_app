@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f3f3f3;
+  }
+
+  .btn-primary {
+    background-color: #0078d4;
+    border-color: #0078d4;
+  }
+
+  .btn-primary:hover {
+    background-color: #005a9e;
+    border-color: #005a9e;
+  }
+.container-fluid{
+  padding-top: 10px;
+  background-color: #131314!important;
+  height: 100vh;
+  color: white;
+}
