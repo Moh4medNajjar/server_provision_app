@@ -18,7 +18,7 @@ body {
 .container-fluid{
   padding-top: 10px;
   background-color: #131314!important;
-  height: 100vh;
+  height: 1000px!important;
   color: white;
   padding-bottom:40px!important
 }
@@ -35,4 +35,7 @@ body {
 
 .form-control {
   height: 30px!important; /* Adjust the height as needed */
+}
+label {
+  font-weight: 400;
 }

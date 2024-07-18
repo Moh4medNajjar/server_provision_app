@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -8,10 +8,29 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
   templateUrl: './sign-up-admin.component.html',
   styleUrl: './sign-up-admin.component.scss'
 })
-export class SignUpAdminComponent {
+export class SignUpAdminComponent implements OnInit {
   signUpForm: FormGroup;
-  x=0
 
+  ngOnInit(): void {
+    this.signUpForm = this.fb.group({
+      username: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      employeeId: ['', Validators.required],
+      position: ['', Validators.required],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
+      ]],
+      confirmPassword: ['', Validators.required],
+      tenantId: ['', Validators.required],
+      clientId: ['', Validators.required],
+      clientSecret: ['', Validators.required],
+      subscriptionId: ['', Validators.required]
+    }, { validator: this.passwordMatchValidator });
+  }
   constructor(private fb: FormBuilder) {
     this.signUpForm = this.fb.group({
       username: ['', Validators.required],
@@ -23,10 +42,16 @@ export class SignUpAdminComponent {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}')
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
       ]],
-      confirmPassword: ['', Validators.required]
-    }, { validator: this.passwordMatchValidator });
+      confirmPassword: ['', Validators.required],
+      tenantId: ['', Validators.required],
+      clientId: ['', Validators.required],
+      clientSecret: ['', Validators.required],
+      subscriptionId: ['', Validators.required]
+    }, {
+      validators: this.passwordMatchValidator
+    });
   }
 
   onSubmit(): void {

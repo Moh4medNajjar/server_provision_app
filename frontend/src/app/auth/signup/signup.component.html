@@ -7,7 +7,7 @@
 
       <div class="form-group">
         <label for="username">Username</label>
-        <input id="username" formControlName="username" class="form-control" type="text">
+        <input id="username" formControlName="username" class="form-control" type="text" placeholder="Enter your username">
         @if(signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid && !signUpForm.get('username')?.pristine){
           <div class="red">
             <i class="fa fa-times-circle"></i> Username is required!
@@ -23,7 +23,7 @@
       <div class="d-flex justify-content-center align-items-center">
         <div class="form-group me-3">
           <label for="firstName">First Name</label>
-          <input id="firstName" formControlName="firstName" class="form-control" type="text">
+          <input id="firstName" formControlName="firstName" class="form-control" type="text" placeholder="Enter your first name">
           @if(signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.invalid){
             <div class="red">
               <i class="fa fa-times-circle"></i> First name is required.
@@ -38,7 +38,7 @@
 
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input id="lastName" formControlName="lastName" class="form-control" type="text">
+          <input id="lastName" formControlName="lastName" class="form-control" type="text" placeholder="Enter your last name">
           @if(signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.invalid){
             <div class="red">
               <i class="fa fa-times-circle"></i> Last name is required.
@@ -55,7 +55,7 @@
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" formControlName="email" class="form-control" type="email">
+        <input id="email" formControlName="email" class="form-control" type="email" placeholder="Enter your email">
         @if(signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid){
           <div class="red">
             <i class="fa fa-times-circle"></i> Email is missing or not valid.
@@ -71,7 +71,7 @@
       <div class="d-flex align-items-center justify-content-center">
         <div class="form-group me-3">
           <label for="employeeId">Employee ID</label>
-          <input id="employeeId" formControlName="employeeId" class="form-control" type="text">
+          <input id="employeeId" formControlName="employeeId" class="form-control" type="text" placeholder="Enter your employee ID">
           @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.invalid){
             <div class="red">
               <i class="fa fa-times-circle"></i> Employee id is required.
@@ -86,7 +86,7 @@
 
         <div class="form-group">
           <label for="position">Position</label>
-          <input id="position" formControlName="position" class="form-control" type="text">
+          <input id="position" formControlName="position" class="form-control" type="text" placeholder="Enter your position">
           @if(signUpForm.get('position')?.touched && signUpForm.get('position')?.invalid){
             <div class="red">
               <i class="fa fa-times-circle"></i> Position is required.
@@ -103,7 +103,7 @@
       <div class="d-flex align-items-center justify-content-center">
         <div class="form-group me-3">
           <label for="password">Password</label>
-          <input id="password" formControlName="password" class="form-control" type="password">
+          <input id="password" formControlName="password" class="form-control" type="password" placeholder="Enter your password">
           @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid){
             @if(signUpForm.get('password')?.errors?.['required']){
               <div class="red">
@@ -112,7 +112,7 @@
             }
             @if(signUpForm.get('password')?.errors?.['minlength'] && signUpForm.get('password')?.errors?.['pattern']){
               <div class="red">
-                <i class="fa fa-times-circle"></i> Password must be at least 8 characters and contain one uppercase letter, one lowercase letter, and one number.
+                <i class="fa fa-times-circle"></i> Password must be at least 8 characters.
               </div>
             }
             @if(signUpForm.get('password')?.errors?.['pattern']){
@@ -130,7 +130,7 @@
 
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
-          <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password">
+          <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password" placeholder="Confirm your password">
 
           @if(signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid){
             @if(signUpForm.get('confirmPassword')?.errors?.['required']){
@@ -153,7 +153,7 @@
         </div>
       </div>
 
-      <div class="d-flex align-items-center justify-content-center mt-4">
+      <div class="d-flex align-items-center justify-content-center mt-4" style="height: 100px;">
         <button class="btn"
                 style="background-color:#32BEDD; color:white; padding: 4px 15px; border-radius: 0px;"
                 type="submit"
