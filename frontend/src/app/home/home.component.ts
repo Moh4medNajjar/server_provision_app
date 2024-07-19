@@ -46,9 +46,33 @@ export class HomeComponent {
       region: 'Asia Pacific',
       owner: 'Alice Johnson'
     },
+    {
+      name: 'VM4',
+      vcpus: 32,
+      storage: '200GB',
+      ram: '32GB',
+      status: 'Running',
+      os: 'CentOS 8',
+      ip: '192.168.1.4',
+      created: '2023-03-22',
+      region: 'Asia Pacific',
+      owner: 'Alice Johnson'
+    },
+    {
+      name: 'VM5',
+      vcpus: 32,
+      storage: '200GB',
+      ram: '32GB',
+      status: 'Running',
+      os: 'CentOS 8',
+      ip: '192.168.1.4',
+      created: '2023-03-22',
+      region: 'Asia Pacific',
+      owner: 'Alice Johnson'
+    },
     // Add more VM objects as needed
   ];
 
-  
+
 
 }

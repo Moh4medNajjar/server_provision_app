@@ -1,0 +1,18 @@
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+}
+i, tr{
+  cursor:pointer;
+}
+
+
+.table tbody tr:hover {
+  background-color: #343a40!important; /* Darker shade for hover effect */
+  transition: background-color 0.3s;
+}
+
