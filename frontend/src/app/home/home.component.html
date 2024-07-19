@@ -6,7 +6,7 @@
       <div class="col text-center">
         <button class="btn" style="background-color:#32BEDD; color:white; padding: 4px 15px; border-radius: 0px; width: 200px;" type="submit">
           <i class="fa-solid fa-list me-2"></i>
-          My servers</button>
+          My requests</button>
       </div>
       <div class="separators" style="width: 2px;"></div>
       <div class="col text-center">
@@ -40,10 +40,15 @@
               <p class="card-text"><i class="fas fa-network-wired"></i> {{ vm.ip }}</p>
             </div>
           </div>
+          <div class="d-flex align-items-center justify-content-center"><button class="btn details" style="width: 50%"><i class="fa fa-list me-2"></i> All details</button></div>
         </div>
       </div>
     }
 
+    <div class="col-md-4 mb-4">
+      <div style="cursor:pointer" class="card bg-dark text-white d-flex align-items-center justify-content-center">
+        <i class="fa fa-plus fs-1" ></i>
+      </div>
     </div>
 
 </div>

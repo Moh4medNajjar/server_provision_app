@@ -7,8 +7,26 @@ button {
   margin: 10px 30px
 }
 button:hover{
-  background-color:#32beddba!important ;
+  background-color:#32beddcd!important ;
 }
 i {
   margin-right: 6px!important
 }
+
+.details {
+  background-color: #32bedd ;
+  border-radius: 0px;
+  color:white
+}
+.card {
+  min-height: 310px;
+  padding-bottom:15px;
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.card:hover{
+  background-color: #212529b6!important;
+}
+
+
