@@ -9,7 +9,6 @@
   </div>
 
   <h3 class="mt-4">New Requests</h3>
-  <!-- New Requests Table -->
   <table class="table table-dark table-striped">
     <thead>
       <tr>
@@ -20,22 +19,20 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Example row, repeat for each new request -->
       <tr>
         <td>1</td>
         <td>2023-07-18 10:00</td>
         <td>2 vCPUs, 8GB RAM, 100GB Storage</td>
         <td>
-          <button class="btn btn-success me-2">Accept</button>
-          <button class="btn btn-danger">Refuse</button>
+          <button class="btn btn-primary me-2"><i class="fa-solid fa-eye me-2"></i>View</button>
+          <button class="btn btn-success me-2"><i class="fa-solid fa-circle-check me-2"></i>Accept</button>
+          <button class="btn btn-danger"><i class="fa-solid fa-circle-xmark me-2"></i>Refuse</button>
         </td>
       </tr>
-      <!-- Add more rows as needed -->
     </tbody>
   </table>
 
   <h3 class="mt-4">Answered Requests</h3>
-  <!-- Answered Requests Table -->
   <table class="table table-dark table-striped">
     <thead>
       <tr>
@@ -47,14 +44,14 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Example row, repeat for each answered request -->
       <tr>
         <td>2</td>
         <td>2023-07-19 11:00</td>
         <td>4 vCPUs, 16GB RAM, 200GB Storage</td>
         <td class="text-success">Accepted</td>
         <td>
-          <i class="fas fa-edit me-3"></i>
+          <i class="fas fa-eye me-3"></i>
+          <i class="fas fa-box-archive me-3"></i>
           <i class="fas fa-trash"></i>
         </td>
       </tr>
@@ -64,11 +61,12 @@
         <td>2 vCPUs, 8GB RAM, 100GB Storage</td>
         <td class="text-danger">Refused</td>
         <td>
-          <i class="fas fa-edit me-3"></i>
+          <i class="fas fa-eye me-3"></i>
+          <i class="fas fa-box-archive me-3"></i>
           <i class="fas fa-trash"></i>
+
         </td>
       </tr>
-      <!-- Add more rows as needed -->
     </tbody>
   </table>
 
