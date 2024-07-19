@@ -1,1 +1,144 @@
-<p>home-admin works!</p>
+<div class="container-fluid">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <div class="d-flex justify-content-between align-items-center py-3">
+    <h2 class="mb-0">Welcome admin</h2>
+    <div class="d-flex align-items-center">
+      <div class="me-3">Admin Name</div>
+      <i class="fas fa-bell" style="font-size: 24px;"></i>
+    </div>
+  </div>
+
+  <h3 class="mt-4">New Requests</h3>
+  <!-- New Requests Table -->
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Request ID</th>
+        <th>Submission Time</th>
+        <th>VM Specs Requested</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Example row, repeat for each new request -->
+      <tr>
+        <td>1</td>
+        <td>2023-07-18 10:00</td>
+        <td>2 vCPUs, 8GB RAM, 100GB Storage</td>
+        <td>
+          <button class="btn btn-success me-2">Accept</button>
+          <button class="btn btn-danger">Refuse</button>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <h3 class="mt-4">Answered Requests</h3>
+  <!-- Answered Requests Table -->
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Request ID</th>
+        <th>Submission Time</th>
+        <th>VM Specs Requested</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Example row, repeat for each answered request -->
+      <tr>
+        <td>2</td>
+        <td>2023-07-19 11:00</td>
+        <td>4 vCPUs, 16GB RAM, 200GB Storage</td>
+        <td class="text-success">Accepted</td>
+        <td>
+          <i class="fas fa-edit me-3"></i>
+          <i class="fas fa-trash"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>2023-07-20 12:00</td>
+        <td>2 vCPUs, 8GB RAM, 100GB Storage</td>
+        <td class="text-danger">Refused</td>
+        <td>
+          <i class="fas fa-edit me-3"></i>
+          <i class="fas fa-trash"></i>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <h3 class="mt-4">Azure Credentials</h3>
+  <div id="azure-creds">
+    <div class="d-flex align-items-center mb-3">
+      <span>Tenant ID:</span>
+      @if(!editing['tenantId']){
+        <ng-container>
+          <span class="ms-2">{{ azureCreds.tenantId }}</span>
+          <button class="btn btn-primary ms-2" (click)="editCredential('tenantId')">Edit</button>
+        </ng-container>
+      }
+      @if(editing['tenantId']){
+        <ng-container>
+          <input type="text" class="form-control ms-2" [(ngModel)]="azureCreds.tenantId" placeholder="Enter your Azure Tenant ID">
+          <button class="btn btn-success ms-2" (click)="saveCredential('tenantId')">Save</button>
+        </ng-container>
+      }
+    </div>
+
+    <div class="d-flex align-items-center mb-3">
+      <span>Client ID:</span>
+      @if(editing['clientId']){
+        <ng-container>
+          <span class="ms-2">{{ azureCreds.clientId }}</span>
+          <button class="btn btn-primary ms-2" (click)="editCredential('clientId')">Edit</button>
+          <i class="fa fa-pen"></i>
+        </ng-container>
+      }
+      @if(editing['clientId']){
+        <ng-container >
+          <input type="text" class="form-control ms-2" [(ngModel)]="azureCreds.clientId" placeholder="Enter your Azure Client ID">
+          <button class="btn btn-success ms-2" (click)="saveCredential('clientId')">Save</button>
+        </ng-container>
+      }
+    </div>
+
+    <div class="d-flex align-items-center mb-3">
+      <span>Client Secret:</span>
+      @if(!editing['clientSecret']){
+        <ng-container>
+          <span class="ms-2 me-3">{{ azureCreds.clientSecret }}</span>
+          <i class="fa-solid fa-copy me-2"></i>
+          <i class="fa fa-pen" (click)="editCredential('clientSecret')"></i>
+        </ng-container>
+      }
+      @if(editing['clientSecret']){
+        <ng-container>
+          <input type="password" class="form-control ms-2" [(ngModel)]="azureCreds.clientSecret" placeholder="Enter your Azure Client Secret">
+          <button class="btn btn-success ms-2" (click)="saveCredential('clientSecret')">Save</button>
+        </ng-container>
+      }
+    </div>
+
+    <div class="d-flex align-items-center mb-3">
+      <span>Subscription ID:</span>
+      @if(!editing['subscriptionId']){
+        <ng-container>
+          <span class="ms-2">{{ azureCreds.subscriptionId }}</span>
+          <button class="btn btn-primary ms-2" (click)="editCredential('subscriptionId')">Edit</button>
+        </ng-container>
+      }
+      @if(editing['subscriptionId']){
+        <ng-container>
+          <input type="text" class="form-control ms-2" [(ngModel)]="azureCreds.subscriptionId" placeholder="Enter your Azure Subscription ID">
+          <button class="btn btn-success ms-2" (click)="saveCredential('subscriptionId')">Save</button>
+        </ng-container>
+      }
+
+    </div>
+  </div>
+</div>
