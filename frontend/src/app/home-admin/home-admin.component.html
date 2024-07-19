@@ -72,14 +72,15 @@
     </tbody>
   </table>
 
-  <h3 class="mt-4">Azure Credentials</h3>
+  <h3 class="my-4 mt-5">Azure account :</h3>
   <div id="azure-creds">
     <div class="d-flex align-items-center mb-3">
       <span>Tenant ID:</span>
       @if(!editing['tenantId']){
         <ng-container>
-          <span class="ms-2">{{ azureCreds.tenantId }}</span>
-          <button class="btn btn-primary ms-2" (click)="editCredential('tenantId')">Edit</button>
+          <span class="ms-2 me-3">{{ azureCreds.tenantId }}</span>
+          <i class="fa-solid fa-copy me-2" (click)="copyCredential(azureCreds.tenantId)"></i>
+          <i class="fa fa-pen" (click)="editCredential('tenantId')"></i>
         </ng-container>
       }
       @if(editing['tenantId']){
@@ -92,11 +93,11 @@
 
     <div class="d-flex align-items-center mb-3">
       <span>Client ID:</span>
-      @if(editing['clientId']){
+      @if(!editing['clientId']){
         <ng-container>
-          <span class="ms-2">{{ azureCreds.clientId }}</span>
-          <button class="btn btn-primary ms-2" (click)="editCredential('clientId')">Edit</button>
-          <i class="fa fa-pen"></i>
+          <span class="ms-2 me-3">{{ azureCreds.clientId }}</span>
+          <i class="fa-solid fa-copy me-2" (click)="copyCredential(azureCreds.clientId)"></i>
+          <i class="fa fa-pen" (click)="editCredential('clientId')"></i>
         </ng-container>
       }
       @if(editing['clientId']){
@@ -112,7 +113,7 @@
       @if(!editing['clientSecret']){
         <ng-container>
           <span class="ms-2 me-3">{{ azureCreds.clientSecret }}</span>
-          <i class="fa-solid fa-copy me-2"></i>
+          <i class="fa-solid fa-copy me-2" (click)="copyCredential(azureCreds.clientSecret)"></i>
           <i class="fa fa-pen" (click)="editCredential('clientSecret')"></i>
         </ng-container>
       }
@@ -128,8 +129,9 @@
       <span>Subscription ID:</span>
       @if(!editing['subscriptionId']){
         <ng-container>
-          <span class="ms-2">{{ azureCreds.subscriptionId }}</span>
-          <button class="btn btn-primary ms-2" (click)="editCredential('subscriptionId')">Edit</button>
+          <span class="ms-2 me-3">{{ azureCreds.subscriptionId }}</span>
+          <i class="fa-solid fa-copy me-2" (click)="copyCredential(azureCreds.subscriptionId)"></i>
+          <i class="fa fa-pen" (click)="editCredential('subscriptionId')"></i>
         </ng-container>
       }
       @if(editing['subscriptionId']){

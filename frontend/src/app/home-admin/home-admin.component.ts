@@ -30,4 +30,12 @@ export class HomeAdminComponent {
   saveCredential(key: string) {
     this.editing[key] = false;
   }
+
+  copyCredential(value: string) {
+    navigator.clipboard.writeText(value).then(() => {
+      alert('Copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  }
 }
