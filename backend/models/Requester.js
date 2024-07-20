@@ -24,11 +24,7 @@ const RequesterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  role: {
-    type: String,
-    required: true,
-  },
-  jobPosition: {
+  position: {
     type: String,
     required: true,
   },

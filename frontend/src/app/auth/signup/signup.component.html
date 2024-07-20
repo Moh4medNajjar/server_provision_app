@@ -5,21 +5,6 @@
   <div class="d-flex align-items-center justify-content-center" style="flex-direction: column">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" style="width: min(400px, 100%);">
 
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" formControlName="username" class="form-control" type="text" placeholder="Enter your username">
-        @if(signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid && !signUpForm.get('username')?.pristine){
-          <div class="red">
-            <i class="fa fa-times-circle"></i> Username is required!
-          </div>
-        }
-        @if(signUpForm.get('username')?.touched && signUpForm.get('username')?.valid){
-          <div class="green">
-            <i class="fa fa-check-circle"></i> Looks good!
-          </div>
-        }
-      </div>
-
       <div class="d-flex justify-content-center align-items-center">
         <div class="form-group me-3">
           <label for="firstName">First Name</label>
@@ -55,7 +40,7 @@
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" formControlName="email" class="form-control" type="email" placeholder="Enter your email">
+        <input id="email" formControlName="email" class="form-control" type="email" placeholder="someone@example.com">
         @if(signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid){
           <div class="red">
             <i class="fa fa-times-circle"></i> Email is missing or not valid.
@@ -68,16 +53,48 @@
         }
       </div>
 
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="form-group me-3">
+          <label for="departement">Departement</label>
+          <input id="departement" formControlName="departement" class="form-control" type="text" placeholder="Enter your departement">
+          @if(signUpForm.get('departement')?.touched && signUpForm.get('departement')?.invalid && !signUpForm.get('departement')?.pristine){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> Departement is required!
+            </div>
+          }
+          @if(signUpForm.get('departement')?.touched && signUpForm.get('departement')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input id="phoneNumber" formControlName="phoneNumber" class="form-control" type="number" maxlength="8" placeholder="(+216)">
+          @if(signUpForm.get('phoneNumber')?.touched && signUpForm.get('phoneNumber')?.invalid && !signUpForm.get('phoneNumber')?.pristine){
+            <div class="red">
+              <i class="fa fa-times-circle"></i> Phone number is required!
+            </div>
+          }
+          @if(signUpForm.get('phoneNumber')?.touched && signUpForm.get('phoneNumber')?.valid){
+            <div class="green">
+              <i class="fa fa-check-circle"></i> Looks good!
+            </div>
+          }
+        </div>
+      </div>
+
       <div class="d-flex align-items-center justify-content-center">
         <div class="form-group me-3">
-          <label for="employeeId">Employee ID</label>
-          <input id="employeeId" formControlName="employeeId" class="form-control" type="text" placeholder="Enter your employee ID">
-          @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.invalid){
+          <label for="matricule">Matricule</label>
+          <input id="matricule" formControlName="matricule" class="form-control" type="text" placeholder="Enter your employee ID">
+          @if(signUpForm.get('matricule')?.touched && signUpForm.get('matricule')?.invalid){
             <div class="red">
               <i class="fa fa-times-circle"></i> Employee id is required.
             </div>
           }
-          @if(signUpForm.get('employeeId')?.touched && signUpForm.get('employeeId')?.valid){
+          @if(signUpForm.get('matricule')?.touched && signUpForm.get('matricule')?.valid){
             <div class="green">
               <i class="fa fa-check-circle"></i> Looks good!
             </div>

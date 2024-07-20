@@ -17,11 +17,12 @@ export class SignupComponent {
 
   constructor(private fb: FormBuilder) {
     this.signUpForm = this.fb.group({
-      username: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      employeeId: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      departement: ['', Validators.required],
+      matricule: ['', Validators.required],
       position: ['', Validators.required],
       password: ['', [
         Validators.required,
