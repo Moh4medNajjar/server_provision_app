@@ -62,6 +62,11 @@ const AdminSchema = new mongoose.Schema({
   permissions: {
     type: [String],
   },
+  role: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Role', 
+    required: true,
+  },
   isSuperAdmin: {
     type: Boolean,
     default: false,
