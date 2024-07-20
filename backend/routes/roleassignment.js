@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const RoleAssignment = require('../models/RoleAssignment');
+const RoleAssignment = require('../models/RoleAssignment.js');
 
 // Get all role assignments
 router.get('/', async (req, res) => {

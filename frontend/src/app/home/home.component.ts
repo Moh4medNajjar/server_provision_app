@@ -1,14 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  providers: [AuthService]
 })
 export class HomeComponent {
+  constructor(private authService: AuthService) { }
   vms = [
     {
       name: 'VM1',
@@ -73,6 +78,22 @@ export class HomeComponent {
     // Add more VM objects as needed
   ];
 
+  firstname: string = '';
+  lastname: string = '';
+
+
+  ngOnInit() {
+    // Check if token exists after component initialization
+    const token = this.authService.getToken();
+    if (token) {
+      // Extract user data (consider using a secure backend API instead)
+      const decodedPayload = atob(token.split('.')[1]);
+      const userData = JSON.parse(decodedPayload);
+      console.log(userData)
+      this.firstname = userData.firstname;
+      this.lastname = userData.lastname;
+    }
+  }
 
 
 }

@@ -4,16 +4,8 @@
   <div class="d-flex align-items-center justify-content-center" style="flex-direction: column">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="width: min(400px, 100%);">
       <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" formControlName="username" class="form-control" type="text">
-      </div>
-      <div class="form-group">
         <label for="email">Email Address</label>
         <input id="email" formControlName="email" class="form-control" type="email">
-      </div>
-      <div class="form-group">
-        <label for="matricule">Matricule</label>
-        <input id="matricule" formControlName="matricule" class="form-control" type="text">
       </div>
       <div class="form-group">
         <label for="password">Password</label>

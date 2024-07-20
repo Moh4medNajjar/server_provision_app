@@ -1,27 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HttpClientModule, CommonModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss'
+  styleUrl: './signup.component.scss',
+  providers: [Router, AuthService]
 })
 export class SignupComponent {
   signUpForm: FormGroup;
-  x=0
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.signUpForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
-      departement: ['', Validators.required],
+      department: ['', Validators.required],
       matricule: ['', Validators.required],
       position: ['', Validators.required],
       password: ['', [
@@ -33,9 +38,21 @@ export class SignupComponent {
     }, { validator: this.passwordMatchValidator });
   }
 
-  onSubmit(): void {
+  onSubmit(form: any): void {
     if (this.signUpForm.valid) {
       console.log(this.signUpForm.value);
+    }
+    if (form.valid) {
+      this.authService.signUpRequester(form.value).subscribe(response => {
+        console.log('Requester signed up', response);
+        this.successMessage = 'Sign-up successful!';
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 2000); // Delay to show the success message
+      }, error => {
+        console.error('Sign-up error', error);
+        this.errorMessage = 'Sign-up failed. Please try again.';
+      });
     }
   }
 
@@ -52,3 +69,9 @@ export class SignupComponent {
     }
   }
 }
+
+
+
+
+
+
