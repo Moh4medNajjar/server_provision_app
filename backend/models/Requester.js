@@ -34,6 +34,29 @@ const RequesterSchema = new mongoose.Schema({
   phoneNumber: {
     type: String,
   },
+  subscriptionId: {
+    type: String,
+    default: '', 
+  },
+  clientId: {
+    type: String,
+    default: '',
+  },
+  secretId: {
+    type: String,
+    default: '',
+  },
+  tenantId: {
+    type: String,
+    default: '',
+  },
+  permissions: {
+    type: [String],
+  },
+  isSuperAdmin: {
+    type: Boolean,
+    default: false,
+  },
   requests: [
     {
       type: mongoose.Schema.Types.ObjectId,

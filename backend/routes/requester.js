@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user._id, email: user.email, firstname: user.firstname, lastname: user.lastname },
+      { id: user._id, isSuperAdmin: user.isSuperAdmin, email: user.email, firstname: user.firstname, lastname: user.lastname },
       process.env.JWT_SECRET, 
       { expiresIn: '2h' } 
     );
@@ -58,9 +58,9 @@ router.get('/:id', async (req, res) => {
 
 // Create a new requester
 router.post('/', async (req, res) => {
-  const { firstname, lastname, email, password, position, matricule, phoneNumber, department } = req.body;
+  const { firstname, lastname, email, password, position, matricule, phoneNumber, department, tenantId, clientId, clientSecret, subscriptionId, isSuperAdmin, permissions, requests } = req.body;
   try {
-    const newRequester = new Requester({ firstname, lastname, email, password, position, matricule, phoneNumber, department });
+    const newRequester = new Requester({ firstname, lastname, email, password, position, matricule, phoneNumber, department, tenantId, clientId, clientSecret, subscriptionId, isSuperAdmin, permissions, requests});
     const savedRequester = await newRequester.save();
     res.status(201).json(savedRequester);
   } catch (err) {

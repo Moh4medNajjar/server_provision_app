@@ -35,7 +35,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a notification
 router.put('/:id', async (req, res) => {
   try {
     const updatedNotification = await Notification.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -46,7 +45,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete a notification
 router.delete('/:id', async (req, res) => {
   try {
     const deletedNotification = await Notification.findByIdAndDelete(req.params.id);

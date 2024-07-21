@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a permission
+
 router.put('/:id', async (req, res) => {
   try {
     const updatedPermission = await Permission.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -46,7 +46,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete a permission
 router.delete('/:id', async (req, res) => {
   try {
     const deletedPermission = await Permission.findByIdAndDelete(req.params.id);
