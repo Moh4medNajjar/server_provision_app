@@ -6,6 +6,10 @@ body {
   height: 60px;
   margin-bottom: 15px!important;
 }
+input, select, textarea, label {
+  border-radius: 0px!important;
+  font-size: small!important;
+}
   .btn-primary {
     background-color: #0078d4;
     border-color: #0078d4;
@@ -18,7 +22,7 @@ body {
 .container-fluid{
   padding-top: 30px;
   background-color: #131314!important;
-  height: 1000px!important;
+  height: 100%!important;
   color: white;
   padding-bottom:40px!important;
   padding-left: 40px!important;
@@ -49,4 +53,57 @@ i{
   background-color: #30C730!important;
   color: white!important;
   height: 60px;
+}
+
+
+
+input {
+  border-radius: 0px!important;
+  margin-top:6px
+}
+.form-group {
+  margin-top:12px
+}
+
+/*************************************/
+.container-fluid {
+  padding-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.text-danger {
+  color: red;
+  font-size: 0.875em;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #32BEDD;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+button:hover:not([disabled]) {
+  background-color: #28a0bb;
 }

@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignUpAdminComponent } from './sign-up-admin/sign-up-admin.component';
 import { MyRequestsComponent } from './my-requests/my-requests.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { ServerFormComponent } from './server-form/server-form.component';
 
 export const routes: Routes = [
   { path: 'index', component: IndexPageComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'admin-signup', component: SignUpAdminComponent },
   { path: 'my-requests', component: MyRequestsComponent },
+  { path: 'server-form', component: ServerFormComponent },
 
 ];

@@ -7,18 +7,18 @@ const RequestSchema = new mongoose.Schema({
       firstname: String,
       lastname: String,
       email: String,
-      jobPosition: String,
+      position: String,
       department: String,
     },
     required: true,
   },
-  application_supplier: {
-    type: {
-      name: String,
-      company: String,
-    },
-    required: true,
-  },
+  // application_supplier: {
+  //   type: {
+  //     name: String,
+  //     company: String,
+  //   },
+  //   required: true,
+  // },
   environment_type: {
     type: String,
     enum: ['Production', 'Pre-Production', 'Development', 'Test'],
@@ -60,9 +60,9 @@ const RequestSchema = new mongoose.Schema({
         version: String,
       }
     ],
-    config_files: [String],
-    log_files: [String],
-    temp_files: [String],
+    // config_files: [String],
+    // log_files: [String],
+    // temp_files: [String],
     services: [String],
     application_server_version: String,
     database_version: String,

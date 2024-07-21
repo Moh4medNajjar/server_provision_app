@@ -57,12 +57,12 @@ const RequesterSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  requests: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Request',
-    },
-  ],
+  // requests: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: 'Request',
+  //   },
+  // ],
 }, { timestamps: true });
 
 // Pre-save hook to hash the password

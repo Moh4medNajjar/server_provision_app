@@ -1,0 +1,105 @@
+<div class="container-fluid py-5">
+  <h2 class="text-center">Create a New Request</h2>
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="requestForm" (ngSubmit)="onSubmit()" class="w-50">
+
+      <!-- Environment Type -->
+      <div class="d-flex justify-content-between align-items-center" >
+        <div class="form-group me-3" style="width: 50%">
+          <label for="environmentType">Environment Type</label>
+          <select id="environmentType" formControlName="environmentType" class="form-control">
+            <option value="">Select Environment Type</option>
+            <option value="Production">Production</option>
+            <option value="Pre-Production">Pre-Production</option>
+            <option value="Development">Development</option>
+            <option value="Test">Test</option>
+          </select>
+          @if(requestForm.get('environmentType')?.invalid && requestForm.get('environmentType')?.touched){
+            <div class="text-danger">
+              Environment Type is required.
+            </div>
+          }
+        </div>
+
+        <!-- Machine Details -->
+        <div class="form-group" style="width: 50%">
+          <label for="machineName">Machine Name</label>
+          <input id="machineName" formControlName="machineName" class="form-control" type="text">
+          @if(requestForm.get('machineName')?.invalid && requestForm.get('machineName')){
+            <div class="text-danger">
+              Machine Name is required.
+            </div>
+          }
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="machineDescription">Machine Description</label>
+        <textarea id="machineDescription" formControlName="machineDescription" class="form-control"></textarea>
+        @if(requestForm.get('machineDescription')?.invalid && requestForm.get('machineDescription')){
+          <div class="text-danger">
+            Machine Description is required.
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="startDate">Desired Start Date</label>
+        <input id="startDate" formControlName="startDate" class="form-control" type="date">
+        @if(requestForm.get('startDate')?.invalid && requestForm.get('startDate')?.touched){
+          <div class="text-danger">
+            Desired Start Date is required.
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="os">Operating System</label>
+        <select id="os" formControlName="os" class="form-control">
+          <option value="">Select Operating System</option>
+          <option value="Windows Server 2016">Windows Server 2016</option>
+          <option value="Windows Server 2019">Windows Server 2019</option>
+          <option value="Linux RHEL 7.X">Linux RHEL 7.X</option>
+          <option value="Linux RHEL 8.X">Linux RHEL 8.X</option>
+        </select>
+        @if(requestForm.get('os')?.invalid && requestForm.get('os')?.touched){
+          <div class="text-danger">
+            Operating System is required.
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="diskSpace">Disk Space</label>
+        <input id="diskSpace" formControlName="diskSpace" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="ram">RAM</label>
+        <input id="ram" formControlName="ram" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="cpu">CPU</label>
+        <input id="cpu" formControlName="cpu" class="form-control" type="text">
+      </div>
+
+      <!-- Optional fields for software and files -->
+      <div class="form-group">
+        <label for="softwareList">Software List</label>
+        <textarea id="softwareList" formControlName="softwareList" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="services">Services</label>
+        <textarea id="services" formControlName="services" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="appServerVersion">Application Server Version</label>
+        <input id="appServerVersion" formControlName="appServerVersion" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="dbVersion">Database Version</label>
+        <input id="dbVersion" formControlName="dbVersion" class="form-control" type="text">
+      </div>
+
+      <!-- Submit button -->
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit" [disabled]="requestForm.invalid">Submit Request</button>
+      </div>
+    </form>
+  </div>
+</div>
