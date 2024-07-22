@@ -17,6 +17,7 @@ export class ServerFormComponent implements OnInit {
   requestForm: FormGroup;
 
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
     private requestService: ReqService
@@ -76,6 +77,7 @@ export class ServerFormComponent implements OnInit {
         response => {
           alert('Request created successfully!');
           console.log(response);
+          this.router.navigate(['/home']);
         },
         error => {
           console.error('Error:', error);
