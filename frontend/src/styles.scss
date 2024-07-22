@@ -6,10 +6,10 @@ body {
   height: 60px;
   margin-bottom: 15px!important;
 }
-input, select, textarea, label {
-  border-radius: 0px!important;
-  font-size: small!important;
-}
+// input, select, textarea, label {
+//   border-radius: 0px!important;
+//   font-size: small!important;
+// }
   .btn-primary {
     background-color: #0078d4;
     border-color: #0078d4;
@@ -19,15 +19,7 @@ input, select, textarea, label {
     background-color: #005a9e;
     border-color: #005a9e;
   }
-.container-fluid{
-  padding-top: 30px;
-  background-color: #131314!important;
-  height: 100%!important;
-  color: white;
-  padding-bottom:40px!important;
-  padding-left: 40px!important;
-  padding-right: 40px!important;
-}
+
 
 .green {
   color: #30C730
@@ -106,4 +98,13 @@ button[disabled] {
 
 button:hover:not([disabled]) {
   background-color: #28a0bb;
+}
+.container-fluid{
+  padding-top: 30px;
+  background-color: #131314!important;
+  height: 1000!important;
+  color: white;
+  padding-bottom:40px!important;
+  padding-left: 40px!important;
+  padding-right: 40px!important;
 }

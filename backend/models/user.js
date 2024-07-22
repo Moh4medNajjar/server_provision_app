@@ -50,7 +50,7 @@ const RequesterSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
-  permissions: {
+  role: {
     type: [String],
   },
   isSuperAdmin: {

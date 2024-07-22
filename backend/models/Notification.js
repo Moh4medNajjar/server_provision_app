@@ -16,15 +16,7 @@ const NotificationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  type: {
-    type: String,
-    enum: ['Info', 'Warning', 'Error'], // Example types
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
+  sentAt: {
     type: Date,
     default: Date.now,
   },
@@ -32,10 +24,6 @@ const NotificationSchema = new mongoose.Schema({
     type: String,
     enum: ['Sent', 'Delivered', 'Read'],
     default: 'Sent',
-  },
-  isRead: {
-    type: Boolean,
-    default: false,
   },
   relatedResourceId: {
     type: mongoose.Schema.Types.ObjectId,
