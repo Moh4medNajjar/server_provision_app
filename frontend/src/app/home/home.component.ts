@@ -2,17 +2,22 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   providers: [AuthService]
 })
 export class HomeComponent {
+  email: any;
+  position: any;
+  requesterId: any;
+  department: any;
   constructor(private authService: AuthService) { }
   vms = [
     {
@@ -92,6 +97,11 @@ export class HomeComponent {
       console.log(userData)
       this.firstname = userData.firstname;
       this.lastname = userData.lastname;
+      this.email = userData.email;
+      this.position = userData.position;
+      this.requesterId = userData.requesterId;
+      this.department = userData.department;
+
     }
   }
 

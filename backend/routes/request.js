@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Request = require('../models/Request');
 
+
 // Get all requests
 router.get('/', async (req, res) => {
   try {
@@ -25,9 +26,47 @@ router.get('/:id', async (req, res) => {
 
 // Create a new request
 router.post('/', async (req, res) => {
-  const { requester, virtualMachine, status, details } = req.body;
+  const {
+    requesterId,
+    firstname,
+    lastname,
+    email,
+    position,
+    department,
+    environment_type,
+    machineName,
+    machineDescription,
+    desired_start_date,
+    operating_system,
+    disk_space,
+    ram,
+    vcpus,
+    software_list,
+    status,
+    approvedBy
+  } = req.body;
+
   try {
-    const newRequest = new Request({ requester, virtualMachine, status, details });
+    const newRequest = new Request({
+      requesterId,
+      firstname,
+      lastname,
+      email,
+      position,
+      department,
+      environment_type,
+      machineName,
+      machineDescription,
+      desired_start_date,
+      operating_system,
+      disk_space,
+      ram,
+      vcpus,
+      software_list,
+      status,
+      approvedBy
+    });
+
     const savedRequest = await newRequest.save();
     res.status(201).json(savedRequest);
   } catch (err) {

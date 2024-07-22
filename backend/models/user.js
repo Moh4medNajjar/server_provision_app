@@ -29,7 +29,8 @@ const RequesterSchema = new mongoose.Schema({
     unique: true,
   },
   department: {
-    type: String,
+    required: true,
+    type: String
   },
   phoneNumber: {
     type: String,
@@ -57,17 +58,10 @@ const RequesterSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  // requests: [
-  //   {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: 'Request',
-  //   },
-  // ],
 }, { timestamps: true });
 
-// Pre-save hook to hash the password
 RequesterSchema.pre('save', async function(next) {
-  if (this.isModified('password')) { // Hash password only if it's modified
+  if (this.isModified('password')) { 
     try {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(this.password, salt);

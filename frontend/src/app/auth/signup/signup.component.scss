@@ -53,3 +53,6 @@ button[disabled] {
 button:hover:not([disabled]) {
   background-color: #28a0bb;
 }
+input:focus {
+  color: #007bff!important; /* Change this to your desired color */
+}

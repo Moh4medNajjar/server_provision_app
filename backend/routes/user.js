@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Requester = require('../models/user');
+const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const Requester = require('../models/user'); 
 
 
 // Login Endpoint

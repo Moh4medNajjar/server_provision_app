@@ -81,7 +81,7 @@
 
         <div class="form-group">
           <label for="phoneNumber">Phone Number</label>
-          <input id="phoneNumber" formControlName="phoneNumber" class="form-control" type="number" maxlength="8" placeholder="(+216)">
+          <input id="phoneNumber" formControlName="phoneNumber" class="form-control" type="text" maxlength="8" placeholder="(+216)">
           @if(signUpForm.get('phoneNumber')?.touched && signUpForm.get('phoneNumber')?.invalid && !signUpForm.get('phoneNumber')?.pristine){
             <div class="red">
               <i class="fa fa-times-circle"></i> Phone number is required!
@@ -184,7 +184,7 @@
         <button class="btn"
                 style="background-color:#32BEDD; color:white; padding: 4px 15px; border-radius: 0px;"
                 type="submit"
-                [disabled]="!signUpForm.valid">Sign Up</button>
+                >Sign Up</button>
       </div>
 
     </form>

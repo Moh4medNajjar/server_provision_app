@@ -10,6 +10,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+
+
   signUpRequester(requesterData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/requesters`, requesterData);
   }
